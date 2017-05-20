@@ -1,0 +1,22 @@
+﻿body {
+}
+.magicBall {
+    width: 20px;
+    height: 20px;
+    margin: 30px;
+    /*-webkit-animation: wiggle 0.5s 5s;*/
+
+}
+
+
+
+magicBall:after {
+    content: '\00d7';
+}
+
+@-webkit-keyframes wiggle {
+    0% {-webkit-transform:rotate(4deg);}
+    50% {-webkit-transform:rotate(-4deg);}
+    100% {-webkit-transform:rotate(4deg);}
+}
+

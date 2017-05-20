@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Magic 8 Ball";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Magic8Ball.css">
+</head>
+
+
+<form>
+    Type in your question: <br>
+    <input type="text" name="question"><br>
+</form>
+
+<button id="btn">
+    Get a random phrase
+</button>
+
+<div id="response">
+    A spot for responses.
+</div>
+
+<img src="~/Content/Images/magic8ball.jpg" id="magicBall"/>
+
+<script>
+    var button = document.getElementById("btn");
+    button.onclick = function () {
+        var responses = ["Maybe... if you try hard enough", "Definitely not.", "Do you really want that?", "Yes, of course!", "Yes! 100x yes!", "Nope", "I think so", "I don't understand the question. Please ask again"];
+        var max = responses.length;
+        var randomPosition = Math.floor(Math.random() * max);
+        //remember that Math.random returns a decimal between 0 and 1
+        var result = responses[randomPosition];
+
+        //update the HTML response div to display the selected string
+        document.getElementById("response").innerHTML = result;
+    }
+
+    magicBall.onmouseover = function(){
+        
+        function cycleMargin(magicBall, defMargin, offsetMargin) {
+            var elem = document.getElementById(magicBall),
+              displaced = false;
+
+            function nudge() {
+                elem.style.margin = (displaced ^= true) ? defMargin : offsetMargin;
+                setTimeout(nudge, displaced ? 100 + Math.random() * 500 : 50);
+                setTime
+               
+            }
+
+            nudge();
+
+            
+        }
+
+        cycleMargin('magicBall', '0 10px 0 0', '0 0 0 10px');
+    }
+
+</script>
